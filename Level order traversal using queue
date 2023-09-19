@@ -1,0 +1,70 @@
+class Node{
+int data;
+Node left;
+Node right;
+
+public Node(int item){
+data=item;
+left=null;
+right=null;
+}
+}
+
+class BinaryTree{
+
+Node root;
+
+void printLevelOrder(){
+
+Queue<Node> queue = new LinkedList<Node>();
+queue.add(root);
+while(!queue.isEmpty()){
+Node current= queue.poll();
+System.out.println(current.dat+" ");
+
+ // Enqueue left child
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+ 
+            // Enqueue right child
+            if (current.right != null) {
+                queue.add(current.right);
+            }
+
+}
+}
+
+ public static void main(String args[])
+    {
+        // Creating a binary tree and entering
+        // the nodes
+        BinaryTree level = new BinaryTree();
+        level.root = new Node(1);
+        level.root.left = new Node(2);
+        level.root.right = new Node(3);
+        level.root.left.left = new Node(4);
+        level.root.left.right = new Node(5);
+ 
+        System.out.println("Level order traversal of binary tree is - ");
+        tree_level.printLevelOrder();
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
